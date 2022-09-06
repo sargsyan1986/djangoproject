@@ -61,7 +61,7 @@ jobs:
       shell: bash
       run: |
         aws eks update-kubeconfig --name im-cluster
-        kubectl create secret docker-registry regcred --docker-server=docker.io --docker-username=${{ secrets.DOCKER_USERNAME }} --docker-password=${{ secrets.DOCKER_PASSWORD }} || true
+        kubectl create secret --namespace=djangoproject docker-registry regcred --docker-server=docker.io --docker-username=${{ secrets.DOCKER_USERNAME }} --docker-password=${{ secrets.DOCKER_PASSWORD }} || true
         envsubst < depl.yaml > ${{ github.sha }}.yaml
         kubectl apply -f ${{ github.sha }}.yaml
           
