@@ -17,7 +17,7 @@ SILENCED_SYSTEM_CHECKS = SILENCED_SYSTEM_CHECKS + [
     'captcha.recaptcha_test_key_error'  # Default test keys for development.
 ]
 
-ALLOWED_HOSTS = ['.localhost', '127.0.0.1', 'www.127.0.0.1']
+ALLOWED_HOSTS = ['*']
 
 LOCALE_MIDDLEWARE_EXCLUDED_HOSTS = ['docs.djangoproject.localhost']
 
@@ -50,7 +50,7 @@ DOCS_BUILD_ROOT = DATA_DIR.joinpath('djangodocs')
 
 # django-hosts settings
 
-PARENT_HOST = 'localhost:8000'
+PARENT_HOST = '0.0.0.0:8000'
 
 # django-push settings
 
