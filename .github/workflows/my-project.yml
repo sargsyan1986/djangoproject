@@ -10,7 +10,7 @@ on:
     paths-ignore:
 #    - '.github/**'
     - 'README.md'
-
+  
 env:
   AWS_DEFAULT_REGION: us-east-1
   IMAGE: sargsyan/docker-repo
