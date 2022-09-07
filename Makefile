@@ -1,4 +1,4 @@
-STATIC = djangoproject/static
+STATIC = djangoproject/static   
 SCSS = djangoproject/scss
 JQUERY_FLOT=djangoproject/static/js/lib/jquery-flot
 APP_LIST ?= accounts aggregator blog contact dashboard djangoproject docs fundraising legacy members releases svntogit tracdb
