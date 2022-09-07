@@ -10,15 +10,15 @@ ENV PYTHONUNBUFFERED 1
 
 # install psycopg2
 RUN apk update \
-    && apk add --virtual build-deps gcc python3-dev musl-dev \
-    && apk add postgresql-dev \
-    && apk add gettext-dev \
-    && apk add rsync \
-    && pip install psycopg2 \
-    && apk del build-deps
+ && apk add --virtual build-deps gcc python3-dev musl-dev \
+ && apk add postgresql-dev \
+ && apk add gettext-dev \
+ && apk add rsync \
+ && pip install psycopg2 \
+ && apk del build-deps
 
 # install node and npm
-RUN apk add --update nodejs nodejs-npm
+RUN apk add --update nodejs npm
 
 # install pillow dependencies
 RUN apk add build-base python3-dev py-pip jpeg-dev zlib-dev
@@ -30,19 +30,18 @@ RUN apk --update add postgresql-client
 # install git
 RUN apk add git
 
+# copy project
+COPY . .
+
 # install dependencies
-RUN pip install --upgrade pip
-COPY ./requirements ./requirements
-RUN pip install -r ./requirements/dev.txt
-RUN pip install -r ./requirements/tests.txt
-RUN pip install tox
-RUN npm install
+RUN pip install --upgrade pip \
+ && pip install -r ./requirements/dev.txt \
+ && pip install -r ./requirements/tests.txt \
+ && pip install tox \
+ && npm install
 
 # copy docker-entrypoint.sh
 COPY ./docker-entrypoint.sh ./docker-entrypoint.sh
-
-# copy project
-COPY . .
 
 # run docker-entrypoint.sh
 ENTRYPOINT ["./docker-entrypoint.sh"]
