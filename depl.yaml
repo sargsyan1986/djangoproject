@@ -11,7 +11,7 @@ metadata:
   name: djangoproject
   namespace: djangoproject
 spec:
-  replicas: 2
+  replicas: 3
   selector:
     matchLabels:
       app: djangoproject
