@@ -30,6 +30,8 @@ RUN apk --update add postgresql-client
 # install git
 RUN apk add git
 
+# copy project
+COPY . .
 
 # install dependencies
 RUN pip install --upgrade pip \
@@ -41,8 +43,6 @@ RUN pip install --upgrade pip \
 # copy docker-entrypoint.sh
 COPY ./docker-entrypoint.sh ./docker-entrypoint.sh
 
- # copy project
-COPY . .
 
 # run docker-entrypoint.sh
 ENTRYPOINT ["./docker-entrypoint.sh"]
