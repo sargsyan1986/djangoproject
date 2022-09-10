@@ -2,7 +2,7 @@
 # kind: Namespace
 # metadata:
 #   name: djangoproject
----
+--- 
 apiVersion: apps/v1
 kind: Deployment
 metadata:
