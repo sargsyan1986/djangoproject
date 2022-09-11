@@ -58,7 +58,7 @@ apiVersion: v1
 kind: Service
 metadata:
   namespace: djangoproject
-  name: im-service
+  name:  im-service
 spec:
   type: NodePort
   selector:
