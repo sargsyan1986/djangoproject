@@ -1,3 +1,6 @@
+Status of Last Deployment:<br>
+<img src="https://github.com/sargsyan1986/djangoproject/workflows/My-Great-Project/badge.svg?branch=main"><br>
+
 djangoproject.com source code
 =============================
 
